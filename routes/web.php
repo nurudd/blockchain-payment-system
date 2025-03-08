@@ -14,11 +14,11 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('/transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
+Route::get('/', [TransactionController::class, 'create'])->name('transactions.create');
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
 Route::get('/transactions/{id}', [TransactionController::class, 'show'])->name('transactions.show');
